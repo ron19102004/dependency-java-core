@@ -1,10 +1,10 @@
 package org.example.auth.futures.login;
 
-public class LoginProxy {
+public class LoginFactory {
     private static PhoneNumberPasswordLoginStrategy phoneNumberPasswordLoginStrategy;
     private static UsernamePasswordLoginStrategy usernamePasswordLoginStrategy;
 
-    private LoginProxy() {
+    private LoginFactory() {
     }
 
     public static ILogin get(LoginType loginType) {

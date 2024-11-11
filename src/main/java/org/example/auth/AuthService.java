@@ -2,7 +2,7 @@ package org.example.auth;
 
 import org.example.auth.dto.LoginRequest;
 import org.example.auth.dto.LoginResponse;
-import org.example.auth.futures.login.LoginProxy;
+import org.example.auth.futures.login.LoginFactory;
 
 
 public class AuthService implements IAuthService {
@@ -16,7 +16,7 @@ public class AuthService implements IAuthService {
     private AuthService(){}
     @Override
     public LoginResponse login(LoginRequest request) {
-        return LoginProxy
+        return LoginFactory
                 .get(request.getLoginType())
                 .login(request);
     }
